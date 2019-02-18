@@ -558,6 +558,8 @@ namespace Tracing.ViewModels
                 await DialogService.ShowMessageBox(msg,
                     Utils.GetResource("Resources/MessageDialogTitle-Error"));
             }
+
+            IsLockInkManipulationMode = true;
         }
 
         private async Task DoPrintAsync()
