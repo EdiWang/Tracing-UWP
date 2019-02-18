@@ -322,7 +322,7 @@
     <value>Wheel Settings</value>
   </data>
   <data name="AboutAppTitle.Text" xml:space="preserve">
-    <value>Tracing (Windows 10 Universal)</value>
+    <value>Tracing for Windows 10</value>
   </data>
   <data name="TxtLanguage.Text" xml:space="preserve">
     <value>Language</value>
@@ -346,7 +346,7 @@
     <value>Welcome to Tracing</value>
   </data>
   <data name="WelcomeFlipMainSubTitle.Text" xml:space="preserve">
-    <value>For Windows 10 Creators Update</value>
+    <value>For Windows 10</value>
   </data>
   <data name="WelcomeFlipWalkThrough.Text" xml:space="preserve">
     <value>We will walk you through the basic usage.</value>

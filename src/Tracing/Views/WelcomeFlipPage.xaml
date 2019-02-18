@@ -23,7 +23,7 @@
                    HorizontalAlignment="Center" 
                    Opacity="0.6"
                    Margin="0,0,0,5" FontSize="12">
-            <Run>© 2015-2018 edi.wang, Designed and Developed by</Run>
+            <Run>© 2015-2019 edi.wang, Designed and Developed by</Run>
             <Run Text="{x:Bind Publisher}" />
             <Run Text=" (Sample Images by Microsoft Japan), App Version " />
             <Run Text="{x:Bind Version}" />

@@ -322,7 +322,7 @@
     <value>轮盘设置</value>
   </data>
   <data name="AboutAppTitle.Text" xml:space="preserve">
-    <value>描图 (Windows 10 创意者版)</value>
+    <value>描图 (Windows 10)</value>
   </data>
   <data name="TxtLanguage.Text" xml:space="preserve">
     <value>语言</value>
@@ -346,7 +346,7 @@
     <value>尽情使用吧！</value>
   </data>
   <data name="WelcomeFlipMainSubTitle.Text" xml:space="preserve">
-    <value>为 Windows 10 创意者更新 打造</value>
+    <value>为 Windows 10 打造</value>
   </data>
   <data name="WelcomeFlipMainTitle.Text" xml:space="preserve">
     <value>欢迎使用《描图》</value>
