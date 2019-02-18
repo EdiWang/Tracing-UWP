@@ -88,7 +88,9 @@ namespace Tracing.ViewModels
 
             SampleImages = new ObservableCollection<ImageSource>(new List<ImageSource>());
             for (var i = 1; i <= 6; i++)
+            {
                 SampleImages.Add(new BitmapImage(new Uri($"ms-appx:///Assets/Samples/{i}.jpg")));
+            }
         }
 
         private void DoPickRecentColor(SolidColorBrush solidColorBrush)
@@ -238,9 +240,14 @@ namespace Tracing.ViewModels
             {
                 _isMouseDrawingEnabled = value;
                 if (value)
+                {
                     InkOperator.InkCanvas.InkPresenter.InputDeviceTypes |= CoreInputDeviceTypes.Mouse;
+                }
                 else
+                {
                     InkOperator.InkCanvas.InkPresenter.InputDeviceTypes &= ~CoreInputDeviceTypes.Mouse;
+                }
+
                 RaisePropertyChanged();
             }
         }
@@ -252,9 +259,14 @@ namespace Tracing.ViewModels
             {
                 _isTouchDrawingEnabled = value;
                 if (value)
+                {
                     InkOperator.InkCanvas.InkPresenter.InputDeviceTypes |= CoreInputDeviceTypes.Touch;
+                }
                 else
+                {
                     InkOperator.InkCanvas.InkPresenter.InputDeviceTypes &= ~CoreInputDeviceTypes.Touch;
+                }
+
                 RaisePropertyChanged();
             }
         }
@@ -443,11 +455,9 @@ namespace Tracing.ViewModels
             await DialogService.ShowMessage(message, title, confirmText, cancelText,
                 b =>
                 {
-                    if (b)
-                    {
-                        CurrentImageSource = null;
-                        InkOperator.InkCanvas.InkPresenter.StrokeContainer.Clear();
-                    }
+                    if (!b) return;
+                    CurrentImageSource = null;
+                    InkOperator.InkCanvas.InkPresenter.StrokeContainer.Clear();
                 });
         }
 
@@ -474,9 +484,7 @@ namespace Tracing.ViewModels
             };
 
             IsLockInkManipulationMode = true;
-
             IsToggleTouchEnabled = GetTouchProperties();
-
             IsBlockingBusy = false;
         }
 
@@ -504,9 +512,13 @@ namespace Tracing.ViewModels
         {
             var view = ApplicationView.GetForCurrentView();
             if (view.IsFullScreenMode)
+            {
                 view.ExitFullScreenMode();
+            }
             else
+            {
                 view.TryEnterFullScreenMode();
+            }
         }
 
         public bool IsInkToShapeOn
