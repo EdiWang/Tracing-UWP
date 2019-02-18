@@ -31,7 +31,6 @@ namespace Tracing.ViewModels
         private ImageSource _currentImageSource;
         private readonly PickerLocationId _defaultInkFilePickerLocation = PickerLocationId.DocumentsLibrary;
         private TracingDocument _document;
-        private bool _hasTouchScreen;
         private bool _isFullScreen;
         private bool _isInitialized;
         private bool _isLockColor;
@@ -41,7 +40,7 @@ namespace Tracing.ViewModels
         private bool _isToggleMouseEnabled;
         private bool _isTouchDrawingEnabled;
         private ObservableCollection<ImageSource> _sampleImages;
-        TouchCapabilities _touchCapabilities = new TouchCapabilities();
+        readonly TouchCapabilities _touchCapabilities = new TouchCapabilities();
         private int _totalStrokes;
         private bool _isBlockingBusy;
         private int _imagePixelHeight;
@@ -230,16 +229,6 @@ namespace Tracing.ViewModels
         {
             get => _currentCanvasBackgroundBrush;
             set { _currentCanvasBackgroundBrush = value; RaisePropertyChanged(); }
-        }
-
-        public bool HasTouchScreen
-        {
-            get => _hasTouchScreen;
-            set
-            {
-                _hasTouchScreen = value;
-                RaisePropertyChanged();
-            }
         }
 
         public bool IsMouseDrawingEnabled
