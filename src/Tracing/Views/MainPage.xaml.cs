@@ -761,7 +761,7 @@ namespace Tracing.Views
 
         public InkReplayer InkReplayer { get; set; }
 
-        protected override async void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
             InkReplayer.StopReplay();
 
