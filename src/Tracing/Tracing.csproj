@@ -11,13 +11,14 @@
     <AssemblyName>Tracing</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.17763.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.17134.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion>10.0.18362.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>Tracing_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>
+    </PackageCertificateKeyFile>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -26,13 +27,14 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
-    <PackageCertificateThumbprint>BBB224C8B43BF9E040FE2C441DD815DA4E3326F0</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>E7558CB57A9AA3F0081A34A8124FC88036F36C97</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -117,7 +119,7 @@
       <Version>2018.2.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.2.8</Version>
+      <Version>6.2.9</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Services.Store.Engagement">
       <Version>10.1901.28001</Version>
@@ -141,13 +143,11 @@
       <Version>12.0.2</Version>
     </PackageReference>
     <PackageReference Include="Win2D.uwp">
-      <Version>1.23.0</Version>
+      <Version>1.24.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\update-history\Update.md" />
-    <None Include="Tracing_StoreKey.pfx" />
-    <None Include="Tracing_TemporaryKey.pfx" />
     <PRIResource Include="Strings\zh-CN\Resources.resw">
       <SubType>Designer</SubType>
     </PRIResource>
@@ -238,7 +238,6 @@
     <Content Include="Assets\Square71x71Logo.scale-150.png" />
     <Content Include="Assets\Square71x71Logo.scale-200.png" />
     <Content Include="Assets\Square71x71Logo.scale-400.png" />
-    <None Include="Package.StoreAssociation.xml" />
     <Content Include="Assets\welcome-screen\EN-1.png" />
     <Content Include="Assets\welcome-screen\flipbg2.jpg" />
     <Content Include="Assets\welcome-screen\step1.png" />
@@ -252,6 +251,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <None Include="Package.xml" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />

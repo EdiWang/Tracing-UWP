@@ -247,7 +247,7 @@
                 <StackPanel RelativePanel.RightOf="Logo" Margin="10,0,0,0">
                     <TextBlock FontWeight="Bold" x:Uid="AboutAppTitle" Text="#AboutAppTitle" Margin="0,0,0,5"/>
                     <TextBlock Margin="0,0,0,5" FontSize="12">
-                            <Run>© 2015-2018 edi.wang, Designed and Developed by</Run>
+                            <Run>© 2015-2019 edi.wang, Designed and Developed by</Run>
                             <Run Text="{Binding Publisher}" />
                     </TextBlock>
                     <TextBlock Foreground="#666" FontSize="12" Tapped="ShowWhatsNew">

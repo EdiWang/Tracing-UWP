@@ -163,76 +163,72 @@
 
         <!--Main Toolbar-->
         <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Height="48" Padding="10,0,0,0">
-            <CommandBar VerticalAlignment="Top" 
-                            DefaultLabelPosition="Right" 
-                            Background="Transparent">
-                <CommandBar.Content>
-                    <StackPanel Orientation="Horizontal">
-                        <InkToolbar x:Name="InkTB" TargetInkCanvas="{x:Bind Ink}" 
+            <StackPanel Orientation="Horizontal">
+                <InkToolbar x:Name="InkTB" TargetInkCanvas="{x:Bind Ink}" 
                                         Loaded="InkTB_OnLoaded"
                                         InitialControls="None"
                                         IsStencilButtonCheckedChanged="InkTB_OnIsStencilButtonCheckedChanged"
                                         InkDrawingAttributesChanged="InkTB_OnInkDrawingAttributesChanged"
                                         ActiveToolChanged="InkTB_OnActiveToolChanged">
-                            <InkToolbar.Resources>
-                                <customPens:CalligraphicPen x:Key="CalligraphicPen"/>
-                                <customPens:MarkerPen x:Key="MarkerPen"/>
-                            </InkToolbar.Resources>
-                            <InkToolbarBallpointPenButton Name="PenButton" />
-                            <InkToolbarPencilButton Name="PencilButton" />
-                            <InkToolbarCustomPenButton CustomPen="{StaticResource CalligraphicPen}"
+                    <InkToolbar.Resources>
+                        <customPens:CalligraphicPen x:Key="CalligraphicPen"/>
+                        <customPens:MarkerPen x:Key="MarkerPen"/>
+                    </InkToolbar.Resources>
+                    <InkToolbarBallpointPenButton Name="PenButton" />
+                    <InkToolbarPencilButton Name="PencilButton" />
+                    <InkToolbarCustomPenButton CustomPen="{StaticResource CalligraphicPen}"
                                                            SelectedBrushIndex="0"
                                                            MinStrokeWidth="4"
                                                            MaxStrokeWidth="10"
                                                            x:Name="CalligraphicPen"
                                                            ToolTipService.ToolTip="Calligraphy pen">
-                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEDFB;" FontSize="16" />
-                                <InkToolbarCustomPenButton.ConfigurationContent>
-                                    <InkToolbarPenConfigurationControl/>
-                                </InkToolbarCustomPenButton.ConfigurationContent>
-                            </InkToolbarCustomPenButton>
-                            <InkToolbarCustomPenButton Name="MarkerButton" CustomPen="{StaticResource MarkerPen}" 
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEDFB;" FontSize="16" />
+                        <InkToolbarCustomPenButton.ConfigurationContent>
+                            <InkToolbarPenConfigurationControl/>
+                        </InkToolbarCustomPenButton.ConfigurationContent>
+                    </InkToolbarCustomPenButton>
+                    <InkToolbarCustomPenButton Name="MarkerButton" CustomPen="{StaticResource MarkerPen}" 
                                                            SelectedStrokeWidth="12" 
                                                            ToolTipService.ToolTip="Marker">
-                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE193;" FontSize="16" />
-                                <InkToolbarCustomPenButton.ConfigurationContent>
-                                    <InkToolbarPenConfigurationControl />
-                                </InkToolbarCustomPenButton.ConfigurationContent>
-                            </InkToolbarCustomPenButton>
-                            <InkToolbarEraserButton IsClearAllVisible="{x:Bind Settings.ShowEraseAllMenuButton, Mode=OneWay}" />
-                            <InkToolbarStencilButton IsProtractorItemVisible="{x:Bind Settings.ShowProtractor, Mode=OneWay}" />
-                        </InkToolbar>
-                        <AppBarButton  x:Name="BringIntoViewButton"
-                                           IsEnabled="False"
-                                           Width="50"
-                                           Style="{StaticResource AppBarButtonRevealStyle}"
-                                           Click="OnBringIntoView">
-                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE2B3;" />
-                        </AppBarButton>
-                        <controls:StatusBarSeperator />
-                        <AppBarButton x:Name="AdvColor" 
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE193;" FontSize="16" />
+                        <InkToolbarCustomPenButton.ConfigurationContent>
+                            <InkToolbarPenConfigurationControl />
+                        </InkToolbarCustomPenButton.ConfigurationContent>
+                    </InkToolbarCustomPenButton>
+                    <InkToolbarEraserButton IsClearAllVisible="{x:Bind Settings.ShowEraseAllMenuButton, Mode=OneWay}" />
+                    <InkToolbarStencilButton IsProtractorItemVisible="{x:Bind Settings.ShowProtractor, Mode=OneWay}" />
+                </InkToolbar>
+                <AppBarButton  x:Name="BringIntoViewButton"
+                               IsEnabled="False"
+                               Width="50"
+                               Height="50"
+                               Style="{StaticResource AppBarButtonRevealStyle}"
+                               Click="OnBringIntoView">
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE2B3;" />
+                </AppBarButton>
+                <AppBarButton x:Name="AdvColor" 
                                           Click="AdvColor_OnClick" 
                                           Style="{StaticResource AppBarButtonRevealStyle}"
                                           ToolTipService.ToolTip="Advanced Color" 
-                                          Width="50">
-                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE790;" FontSize="16" />
-                        </AppBarButton>
-                        <Border VerticalAlignment="Stretch"
+                                          Width="50" Height="50">
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE790;" FontSize="16" />
+                </AppBarButton>
+                <Border VerticalAlignment="Stretch"
                                     CornerRadius="7"
                                     Background="{Binding CurrentLockedColorBrush}" 
                                     Visibility="{Binding ElementName=ChkLockColor, Path=IsChecked, Mode=TwoWay}"
                                     Padding="10,5" Margin="0,5,0,5">
-                            <TextBlock x:Uid="TxtColorLocked" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" />
-                        </Border>
-                        <ItemsControl x:Name="RecentColorList" ItemsSource="{Binding RecentBindingColors, Mode=OneWay}" Margin="10,0,0,0">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <StackPanel Orientation="Horizontal"/>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Button x:Name="BrdRecentColorItem" 
+                    <TextBlock x:Uid="TxtColorLocked" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" />
+                </Border>
+                <ItemsControl x:Name="RecentColorList" ItemsSource="{Binding RecentBindingColors, Mode=OneWay}" Margin="10,0,0,0">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BrdRecentColorItem" 
                                                 Background="{Binding}" 
                                                 BorderThickness="0"
                                                 Height="32" 
@@ -241,13 +237,14 @@
                                                 Command="{Binding DataContext.CommandPickRecentColor, ElementName=RecentColorList}"   
                                                 CommandParameter="{Binding}"
                                                 Style="{StaticResource CircleButtonStyle}" />
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </StackPanel>
-                </CommandBar.Content>
-
-
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+            <CommandBar VerticalAlignment="Center" 
+                        HorizontalAlignment="Right"
+                        DefaultLabelPosition="Right" 
+                        Background="Transparent">
                 <AppBarButton x:Uid="BtnClearAll" Icon="Delete" Label="#BtnClearAll" Command="{Binding CommandClearAll}" Style="{StaticResource AppBarButtonRevealStyle}" />
 
                 <AppBarButton x:Uid="BtnLayers" Icon="Pictures" Label="#BtnLayers" Style="{StaticResource AppBarButtonRevealStyle}">
