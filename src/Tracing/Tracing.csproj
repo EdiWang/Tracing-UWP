@@ -27,7 +27,7 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
-    <PackageCertificateThumbprint>E7558CB57A9AA3F0081A34A8124FC88036F36C97</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>E8384908F250FF1C830072E70CAE5A27F92FCBAD</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
@@ -150,6 +150,12 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
+    <Content Include="Assets\tracing-new-logo.png" />
     <Content Include="Assets\update-history\Update.md" />
     <PRIResource Include="Strings\zh-CN\Resources.resw">
       <SubType>Designer</SubType>
@@ -196,7 +202,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\filelogo.png" />
-    <Content Include="Assets\logoV4.png" />
     <Content Include="Assets\NewStoreLogo.scale-100.png" />
     <Content Include="Assets\NewStoreLogo.scale-125.png" />
     <Content Include="Assets\NewStoreLogo.scale-150.png" />
