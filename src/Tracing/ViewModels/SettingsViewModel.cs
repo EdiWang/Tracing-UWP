@@ -6,7 +6,6 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using Microsoft.Toolkit.Uwp.Helpers;
 using Tracing.Configuration;
-using Tracing.Core;
 using Tracing.Helpers;
 using Tracing.Models;
 
@@ -25,8 +24,6 @@ namespace Tracing.ViewModels
         public RelayCommand CommandWheelSettings { get; set; }
 
         public RelayCommand CommandResetDefaultCanvasSize { get; set; }
-
-        public RelayCommand CommandFeedback { get; set; }
 
         public string Publisher => Edi.UWP.Helpers.Utils.GetAppPublisher();
 
@@ -124,12 +121,6 @@ namespace Tracing.ViewModels
                     CanvasPixelHeight = Settings.DefaultCanvasHeight.ToString();
                     CanvasPixelWidth = Settings.DefaultCanvasWidth.ToString();
                 }
-            });
-
-            CommandFeedback = new RelayCommand(async () =>
-            {
-                var launcher = Microsoft.Services.Store.Engagement.StoreServicesFeedbackLauncher.GetDefault();
-                await launcher.LaunchAsync();
             });
 
             EnableLanguageSelection = Settings.UsePrimaryLanguageOverride;

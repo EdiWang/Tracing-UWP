@@ -1000,12 +1000,6 @@ namespace Tracing.Views
             }
         }
 
-        private async void BtnFeedback_Click(object sender, RoutedEventArgs e)
-        {
-            var launcher = Microsoft.Services.Store.Engagement.StoreServicesFeedbackLauncher.GetDefault();
-            await launcher.LaunchAsync();
-        }
-
         private void CopyRGB_Plain_Click(object sender, RoutedEventArgs e)
         {
             Edi.UWP.Helpers.Utils.CopyToClipBoard(PlainPicker_TextRGB.Text);

@@ -90,15 +90,6 @@
 
 
                 <StackPanel Grid.Column="1" Orientation="Horizontal">
-                    <Button x:Name="BtnFeedback" 
-                            Style="{StaticResource IconButtonStyle}"
-                            FontFamily="Segoe UI"
-                            Content="🙈"
-                            Click="BtnFeedback_Click" FontSize="15"
-                            ToolTipService.ToolTip="Send Feedback" />
-
-                    <controls:StatusBarSeperator />
-
                     <Button Command="{Binding CommandUndo}" ToolTipService.ToolTip="Undo" Style="{StaticResource IconButtonStyle}">
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7A7;" FontSize="15" />
                     </Button>
